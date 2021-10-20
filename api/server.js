@@ -66,7 +66,7 @@ app.put('/updatePaymentStatus/:order_id/:cus_code', function(req, res) {
 });
 
 app.get('/cookStatus', function(req, res) {
-    dbConn.query('SELECT `customer`.`cus_table`, `food`.`food_name`, `orderdetail`.`orderdetail_qty`, `orderdetail`.`orderdetail_id` FROM `customer`, `food`, `orderdetail`, `order` WHERE `order`.`order_id` = `orderdetail`.`order_id` AND `customer`.`cus_code` = `order`.`cus_code` AND `orderdetail`.`food_id` = `food`.`food_id` AND `orderdetail`.`orderdetail_status` = 0', function(error, results, fields){
+    dbConn.query('SELECT `customer`.`cus_table`, `food`.`food_name`, `orderdetail`.`orderdetail_qty`, `orderdetail`.`orderdetail_id` FROM `customer`, `food`, `orderdetail`, `order` WHERE `order`.`order_id` = `orderdetail`.`order_id` AND `customer`.`cus_code` = `order`.`cus_code` AND `orderdetail`.`food_id` = `food`.`food_id` AND `orderdetail`.`orderdetail_status` = 1', function(error, results, fields){
         if(error) throw error;
 
         return res.send(results);
@@ -79,7 +79,7 @@ app.put('/updateCookStatus/:orderdetail_id', function(req, res) {
     if(!orderDetailId){
         return res.status(400).send({ error: true, message: "Please provide orderdetail id" })
     }else{
-        dbConn.query('UPDATE `orderdetail` SET `orderdetail_status` = 1 WHERE `orderdetail_id` = ?', orderDetailId, function(error, results, fields){
+        dbConn.query('UPDATE `orderdetail` SET `orderdetail_status` = 2 WHERE `orderdetail_id` = ?', orderDetailId, function(error, results, fields){
             if(error) throw error;
 
             return res.send(results);
