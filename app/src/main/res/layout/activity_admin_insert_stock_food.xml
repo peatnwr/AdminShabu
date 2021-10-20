@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activites.AdminInsertStockFoodActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#FFD87E">
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_back"/>
+        <ImageButton
+            android:id="@+id/btnAdminProfile"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/ic_person"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <TextView
+            android:id="@+id/Food_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="่เพิ่มอาหาร"
+            android:padding="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="20sp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="ชื่ออาหาร"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_food"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:background="#FFF6DB"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="จำนวนรายการอาหาร"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_amountfood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:textSize="20sp"
+                android:background="#FFF6DB"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="ลิงก์รูปภาพ"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:background="#FFF6DB"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_insert"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#E9B641"
+                android:text="เพิ่ม"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
