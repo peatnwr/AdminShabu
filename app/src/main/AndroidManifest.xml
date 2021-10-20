@@ -14,17 +14,37 @@
         android:theme="@style/Theme.AdminShabu"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activites.AdminEditStockFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminInsertStockFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminStockFoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminStockCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminStatusPaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminStatusOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminCusActivity"
+            android:exported="false" />
+        <activity
             android:name=".activites.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".activites.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".activites.MainActivity"
-            android:exported="true">
         </activity>
     </application>
 
