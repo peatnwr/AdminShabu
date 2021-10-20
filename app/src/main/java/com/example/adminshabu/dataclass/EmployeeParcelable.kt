@@ -3,12 +3,14 @@ package com.example.adminshabu.dataclass
 import android.os.Parcel
 import android.os.Parcelable
 
-data class EmployeeParcelable(val emp_id: Int, val emp_username: String, val emp_name: String, val emp_tel: String) :Parcelable {
+data class EmployeeParcelable(val emp_id: Int, val emp_username: String, val emp_name: String, val emp_tel: String, val emp_img: String, val emp_type: Int) :Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString().toString(),
         parcel.readString().toString(),
-        parcel.readString().toString()
+        parcel.readString().toString(),
+        parcel.readString().toString(),
+        parcel.readInt()
     ) {
     }
 
@@ -17,6 +19,8 @@ data class EmployeeParcelable(val emp_id: Int, val emp_username: String, val emp
         parcel.writeString(emp_username)
         parcel.writeString(emp_name)
         parcel.writeString(emp_tel)
+        parcel.writeString(emp_img)
+        parcel.writeInt(emp_type)
     }
 
     override fun describeContents(): Int {

@@ -40,8 +40,10 @@ class LoginActivity : AppCompatActivity() {
                     val emp_username = response.body()?.emp_username.toString()
                     val emp_name = response.body()?.emp_name.toString()
                     val emp_tel = response.body()?.emp_tel.toString()
+                    val emp_img = response.body()?.emp_img.toString()
+                    val emp_type = response.body()?.emp_type.toString().toInt()
                     val mainAdmin = Intent(this@LoginActivity, MainActivity::class.java)
-                    mainAdmin.putExtra("empInfo", EmployeeParcelable(emp_id, emp_username, emp_name, emp_tel)
+                    mainAdmin.putExtra("empInfo", EmployeeParcelable(emp_id, emp_username, emp_name, emp_tel, emp_img, emp_type)
                     )
                     startActivity(mainAdmin)
                 }else{

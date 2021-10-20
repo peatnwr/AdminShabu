@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".activites.AdminCusActivity">
-    
+    tools:context=".activites.AdminEditProfileActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -23,26 +23,41 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
-
+        android:padding="10dp"
+        android:orientation="vertical">
         <TextView
-            android:id="@+id/Food_category"
+            android:id="@+id/food_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="่ข้อมูลลูกค้า"
+            android:text="่แก้ไขบัญชีผู้ใช้"
             android:padding="10dp"
             android:layout_marginLeft="20dp"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:layout_marginBottom="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imageProfile"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/friend" />
+
+        </RelativeLayout>
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="360dp"
             android:layout_height="wrap_content"
-            android:hint="โต๊ะ"
+            android:hint="ชื่อ"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="10dp">
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_table"
+                android:id="@+id/edt_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -54,11 +69,11 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="360dp"
             android:layout_height="wrap_content"
-            android:hint="จำนวนลูกค้า"
+            android:hint="Username"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="10dp">
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_cusamount"
+                android:id="@+id/edt_username"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -66,56 +81,45 @@
                 android:background="#FFF6DB"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="Tel"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_tel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:background="#FFF6DB"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:hint="ลิงก์"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:background="#FFF6DB"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-
-
-            <TableLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rowEdt">
-                <TableRow>
-
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:layout_width="260dp"
-                        android:layout_height="wrap_content"
-                        android:hint="โค้ด"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginBottom="10dp">
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/edt_code"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:inputType="text"
-                            android:textSize="20sp"
-                            android:background="#FFF6DB"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
-                    <Button
-                        android:id="@+id/btn_code"
-                        android:layout_width="100dp"
-                        android:layout_marginTop="-20dp"
-                        android:layout_height="75dp"
-                        android:layout_alignParentRight="true"
-                        android:backgroundTint="#E9B641"
-                        android:text="สุ่ม"
-                        android:textColor="#ffffff"
-                        android:textSize="20sp" />
-
-                </TableRow>
-
-            </TableLayout>
-
             <Button
-                android:id="@+id/btn_confirm"
+                android:id="@+id/btn_edit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/rowEdt"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="10dp"
@@ -123,7 +127,6 @@
                 android:text="ตกลง"
                 android:textColor="#ffffff"
                 android:textSize="20sp" />
-
         </RelativeLayout>
     </LinearLayout>
 

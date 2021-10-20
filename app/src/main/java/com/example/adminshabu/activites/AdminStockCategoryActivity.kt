@@ -3,6 +3,7 @@ package com.example.adminshabu.activites
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.adminshabu.R
 import com.example.adminshabu.api.clientAPI
@@ -27,7 +28,7 @@ class AdminStockCategoryActivity : AppCompatActivity() {
         var data = intent.extras
         var empInfo: EmployeeParcelable? = data?.getParcelable("empInfo")
 
-        binding.recyclerView.adapter = AdminStockCategoryAdapter(categoryFoodList, applicationContext)
+        binding.recyclerView.adapter = AdminStockCategoryAdapter(categoryFoodList, empInfo, applicationContext)
         binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
 
         binding.btnBack.setOnClickListener {
@@ -43,6 +44,8 @@ class AdminStockCategoryActivity : AppCompatActivity() {
     }
 
     fun callCategoryFood(){
+        var data = intent.extras
+        var empInfo: EmployeeParcelable? = data?.getParcelable("empInfo")
         categoryFoodList.clear()
         val api: clientAPI = Retrofit.Builder()
             .baseUrl("http://10.0.2.2:3000/")
@@ -58,7 +61,7 @@ class AdminStockCategoryActivity : AppCompatActivity() {
                     response.body()?.forEach {
                         categoryFoodList.add(FoodCategory(it.foodcategory_id, it.foodcategory_name, it.foodcategory_img))
                     }
-                    binding.recyclerView.adapter = AdminStockCategoryAdapter(categoryFoodList, applicationContext)
+                    binding.recyclerView.adapter = AdminStockCategoryAdapter(categoryFoodList, empInfo, applicationContext)
                 }
             }
 
@@ -66,5 +69,39 @@ class AdminStockCategoryActivity : AppCompatActivity() {
                 return t.printStackTrace()
             }
         })
+    }
+
+    fun clickSearch(v: View){
+        var data = intent.extras
+        var empInfo: EmployeeParcelable? = data?.getParcelable("empInfo")
+        categoryFoodList.clear()
+        if(binding.edtSearch.text!!.isEmpty()){
+            callCategoryFood()
+        } else {
+            val api: clientAPI = Retrofit.Builder()
+                .baseUrl("http://10.0.2.2:3000/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(clientAPI::class.java)
+            api.searchCategory(
+                binding.edtSearch.text.toString()
+            ).enqueue(object : Callback<List<FoodCategory>> {
+                override fun onResponse(
+                    call: Call<List<FoodCategory>>,
+                    response: Response<List<FoodCategory>>
+                ) {
+                    if(response.isSuccessful){
+                        response.body()?.forEach {
+                            categoryFoodList.add(FoodCategory(it.foodcategory_id, it.foodcategory_name, it.foodcategory_img))
+                        }
+                        binding.recyclerView.adapter = AdminStockCategoryAdapter(categoryFoodList, empInfo, applicationContext)
+                    }
+                }
+
+                override fun onFailure(call: Call<List<FoodCategory>>, t: Throwable) {
+                    return t.printStackTrace()
+                }
+            })
+        }
     }
 }

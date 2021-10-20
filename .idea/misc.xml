@@ -6,8 +6,10 @@
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/drawable/ic_attribution.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/drawable/ic_fastfood.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_cus.xml" value="0.27219202898550726" />
+        <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_edit_profile.xml" value="0.3625" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_edit_stock_food.xml" value="0.3625" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_insert_stock_food.xml" value="0.3625" />
+        <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_profile.xml" value="0.3625" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_status_order.xml" value="0.3625" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_status_payment.xml" value="0.3625" />
         <entry key="..\:/Users/nawar/AndroidStudioProjects/AdminShabu/app/src/main/res/layout/activity_admin_stock_category.xml" value="0.3625" />

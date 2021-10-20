@@ -14,9 +14,12 @@ class Employee(
     @SerializedName("emp_tel") val emp_tel: String,
 
     @Expose
-    @SerializedName("emp_password") val emp_password: String,
+    @SerializedName("emp_username") val emp_username: String,
 
     @Expose
-    @SerializedName("emp_username") val emp_username: String
+    @SerializedName("emp_img") val emp_img: String,
+
+    @Expose
+    @SerializedName("emp_type") val emp_type: Int
 ) {
 }

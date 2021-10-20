@@ -14,6 +14,12 @@
         android:theme="@style/Theme.AdminShabu"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".activites.AdminEditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activites.AdminProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".activites.AdminEditStockFoodActivity"
             android:exported="false" />
         <activity

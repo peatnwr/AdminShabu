@@ -8,15 +8,17 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adminshabu.activites.AdminEditStockFoodActivity
 import com.example.adminshabu.databinding.AdminStockFoodItemLayoutBinding
+import com.example.adminshabu.dataclass.EmployeeParcelable
 import com.example.adminshabu.dataclass.Food
 
-class AdminStockFoodAdapter(val stockFoodList : ArrayList<Food>, val context: Context) :RecyclerView.Adapter<AdminStockFoodAdapter.ViewHolder>() {
+class AdminStockFoodAdapter(val stockFoodList : ArrayList<Food>, val empInfo: EmployeeParcelable?, val context: Context) :RecyclerView.Adapter<AdminStockFoodAdapter.ViewHolder>() {
     inner class ViewHolder(view: View, val binding: AdminStockFoodItemLayoutBinding) :RecyclerView.ViewHolder(view){
         init {
             binding.btnEdit.setOnClickListener {
                 val item = stockFoodList[adapterPosition]
                 val contextView : Context = view.context
                 val editStockFood = Intent(contextView, AdminEditStockFoodActivity::class.java)
+                editStockFood.putExtra("empInfo", empInfo)
                 editStockFood.putExtra("foodcategory_id", item.foodcategory_id.toString())
                 editStockFood.putExtra("foodId", item.food_id.toString())
                 editStockFood.putExtra("foodName", item.food_name)
