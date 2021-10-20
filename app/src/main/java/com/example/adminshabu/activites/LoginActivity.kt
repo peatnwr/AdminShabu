@@ -6,11 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
-import com.example.adminshabu.R
 import com.example.adminshabu.api.clientAPI
 import com.example.adminshabu.databinding.ActivityLoginBinding
 import com.example.adminshabu.dataclass.EmployeeParcelable
-import com.example.adminshabu.module.Employee
+import com.example.adminshabu.dataclass.Employee
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
